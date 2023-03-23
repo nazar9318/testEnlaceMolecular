@@ -1,0 +1,43 @@
+@model EnlaceMolecular.Models.ApplicationUser
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="col-md-6">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post)){
+            <div class="row">
+                <input type="submit" value="Contar palabras" />
+            </div>
+            <div class="row" >
+                <textarea id="text" name="text" style="height: 300px; width: 500px;"></textarea>
+            </div>
+        }
+    </div>
+    <div class="col-md-6">
+        <div>
+            Conteo de palabras:
+        </div>
+        <input class="col-md-12" style="height: 300px;" type="text" value="" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Cómo usar</h2>
+        <ul>
+            <li>Ingrese el texto en el cuadro indicado, del lado izquierdo de la página</li>
+            <li>Presione el botón de "Contar palabras"</li>
+            <li>El resultado aparecerá en el cuadro del lado derecho</li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        <h2>Funcionamiento</h2>
+        <ul>
+            <li>Las puntuaciones, como la coma, el punto, etc., son ignoradas</li>
+            <li>El contador no distingue mayúscula de minúscula, es decir "HOLA" y "hola" son la misma palabra</li>
+            <li>Sí distingue las tildes, es decir "guía" y "guia" son palabras distintas</li>
+        </ul>
+    </div>
+</div>
+
