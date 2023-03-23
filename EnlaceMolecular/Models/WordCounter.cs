@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace EnlaceMolecular.Models {
     public class WordCounter {
-        public string WordCounter {get; set;}
+        private string text;
+        public WordCounter(string text) {
+            this.text = text;
+        }
     }
 }

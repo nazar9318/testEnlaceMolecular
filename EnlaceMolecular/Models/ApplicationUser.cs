@@ -10,7 +10,4 @@ namespace EnlaceMolecular.Models
     public class ApplicationUser : IdentityUser
     {
     }
-    public class WordCounter {
-        public string WordCounter {get; set;}
-    }
 }
