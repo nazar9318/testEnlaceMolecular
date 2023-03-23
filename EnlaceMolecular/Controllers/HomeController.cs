@@ -17,7 +17,7 @@ namespace EnlaceMolecular.Controllers
         [HttpPost]
         public IActionResult Index(string text) {
             WordCounter counter = new WordCounter(text);
-            ViewBag.Message = counter.getCount();
+            ViewData["Message"] = counter.getCount();
             return View();
         }
 
