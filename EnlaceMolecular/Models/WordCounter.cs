@@ -7,8 +7,14 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 namespace EnlaceMolecular.Models {
     public class WordCounter {
         private string text;
+        
         public WordCounter(string text) {
             this.text = text;
         }
+
+        public string getCount() {
+            return text;
+        }
+
     }
 }
