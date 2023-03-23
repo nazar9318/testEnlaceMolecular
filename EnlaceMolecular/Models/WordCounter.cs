@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace EnlaceMolecular.Models {
@@ -13,20 +14,9 @@ namespace EnlaceMolecular.Models {
         }
 
         private string removeSpecialCharacters(string str) {
-            string result = str.Replace(",", "");
-            result = result.Replace(".", "");
-            result = result.Replace("?", "");
-            result = result.Replace("!", "");
-            result = result.Replace("'", "");
-            result = result.Replace("~", "");
-            result = result.Replace("^", "");
-            result = result.Replace(":", "");
-            result = result.Replace("@", "");
-            result = result.Replace("#", "");
-            result = result.Replace("$", "");
-            result = result.Replace("%", "");
-            result = result.Replace("&", "");
-            result = result.Replace("*", "");
+            Regex rgx = new Regex("[*'\",_&#^@(){}¡!¿?]");
+            string result = rgx.Replace(str, string.Empty);
+            result = result.Replace("\n", string.Empty).Replace("\r", string.Empty);
             return result;
         }
 
